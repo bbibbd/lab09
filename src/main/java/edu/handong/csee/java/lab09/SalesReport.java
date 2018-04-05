@@ -1,4 +1,4 @@
-package edu.handong.csee.java.lab09;
+package edu.handong.csee.java.lab09;	//test
 import java.util.Scanner;
 import edu.handong.csee.java.lab09.SalesAssociate;
 
