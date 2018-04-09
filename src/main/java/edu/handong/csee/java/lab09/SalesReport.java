@@ -1,8 +1,9 @@
-package edu.handong.csee.java.lab09;	//test
-import java.util.Scanner;
-import edu.handong.csee.java.lab09.SalesAssociate;
+package edu.handong.csee.java.lab09;	//test3
+import java.util.Scanner;	//import scanner
+import edu.handong.csee.java.lab09.SalesAssociate;	//import the class 'SalesAssociate'
 
-public class SalesReport {
+
+public class SalesReport {	
 	
 	private double highestSales;
 	private double averageSales;
@@ -37,6 +38,7 @@ public class SalesReport {
 			team[i].setName(name);
 			team[i].setSales(sales);
 		}	
+		keyboard.close();
 	}
 	
 	public void computeHigest() {
