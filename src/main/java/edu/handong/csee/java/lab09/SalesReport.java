@@ -67,10 +67,10 @@ public class SalesReport {		//declare the class 'SalesReport'
 	public void computeHighest() {	//declare the method named 'computedHighest'
 		double highestSales = 0;	//initiate the highestSales to 0
 		
-
-		for(int i=0; i<team.length; i++)	//repeat the loop while index value is less than the length of the array team
-			if(highestSales < team[i].getSales())	//if the value highestSales is less than ith element of the array team.
-				highestSales = team[i].getSales();	//replace the highestSales value to ith element of the array
+		int length = team.size();
+		for(int i=0; i<length; i++)	//repeat the loop while index value is less than the length of the array team
+			if(highestSales < team.get(i).getSales())	//if the value highestSales is less than ith element of the array team.
+				highestSales = team.get(i).getSales();	//replace the highestSales value to ith element of the array
 		this.highestSales = highestSales;	//substitute the class value highestSales for highestSles
 	}
 	
