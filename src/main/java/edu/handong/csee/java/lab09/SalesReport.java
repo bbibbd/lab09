@@ -1,5 +1,5 @@
-package edu.handong.csee.java.lab09;	//test3
-import java.util.ArrayList;
+package edu.handong.csee.java.lab09;	//package name
+import java.util.ArrayList;	//import ArrayList
 import java.util.Scanner;	//import scanner
 import edu.handong.csee.java.lab09.SalesAssociate;	//import the class 'SalesAssociate'
 
@@ -13,11 +13,11 @@ public class SalesReport {		//declare the class 'SalesReport'
 	
 	private double highestSales;	//declare a double-type value for highest sales
 	private double averageSales;	//declare a double-type value for average sales
-	private ArrayList <SalesAssociate> team;	//declare an Array named team
+	private ArrayList <SalesAssociate> team;	//declare an ArrayList named team, which use SalesAssociate
 	
 	
 	/**
-	 * This main method will run the program
+	 * This main method runs the program
 	 * @param args
 	 */
 	public static void main(String[] args) {	//this is main method which sets data, computes highest and average sales, and displays the result
@@ -35,31 +35,31 @@ public class SalesReport {		//declare the class 'SalesReport'
 	 * This method gets all the data from user.
 	 */
 	public void getData() {	//declare the method 'getData'
-		/*System.out.println("enter the number of salesman: ");	//print out this message to get the number of salesman
-		int numOfSalesman = keyboard.nextInt();	//get the number of salesman from user
-		*/
-		
+
 		Scanner keyboard = new Scanner(System.in);	//instantiate the scanner to keyboard
-		
 		team = new ArrayList<SalesAssociate>();	//instantiate the array to team
-		boolean done = false;
-		
-		int i=0;
-		while(!done) {
+		boolean done = false;	//initiate the boolean variable 'done' to false
+	
+		int i=0;	//declare and initiate the index variable 'i' to 0
+		while(!done) {	//'done' was initiated to false, so the condition becomes true and can starts the loop 
 			
-			SalesAssociate salesman = new SalesAssociate();
+			SalesAssociate salesman = new SalesAssociate();	//initiate the class SalesAssociate to salesman
 			System.out.println("Enter data for associate number "+(i+1));	//print out this message to get the name and sales of salesman
 			System.out.print("name? ");	//print out this message to get the name of associate
 			String name = keyboard.nextLine();	//get name from user
 			System.out.println("Sales? ");	//print out this method to get sales from user
 			double sales = keyboard.nextDouble();	//get sales from user
-			salesman.setName(name);
-			salesman.setSales(sales);
-			team.add(salesman);
+			salesman.setName(name);	//set name to the instance salesman
+			salesman.setSales(sales);	//set sales to the instance salesman
+			team.add(salesman);	//add salesman to team
 			
-			System.out.println("add more salesman?");
-			if(keyboard.next().equalsIgnoreCase("y"))	done = false;
-			else	done=true;
+			System.out.println("add more salesman? (y/n)");	//ask user whether add more salesman or not
+
+			if(keyboard.next().equalsIgnoreCase("y")) {	//if user_inputed value is "y" or "Y"
+				keyboard.nextLine();	//remove enter on the buffer
+				done = false;	//boolean variable done is false to repeat the loop one more
+			}
+			else	done=true;	//if user_inputed value is not "y" or "Y",  'done' becomes true so that escape the loop
 		}	
 		keyboard.close();	//close scanner
 	}
@@ -70,9 +70,9 @@ public class SalesReport {		//declare the class 'SalesReport'
 	public void computeHighest() {	//declare the method named 'computedHighest'
 		double highestSales = 0;	//initiate the highestSales to 0
 		
-		int length = team.size();
-		for(int i=0; i<length; i++)	//repeat the loop while index value is less than the length of the array team
-			if(highestSales < team.get(i).getSales())	//if the value highestSales is less than ith element of the array team.
+		int length = team.size();	//initiate length to size of the the AaaryList 'team'
+		for(int i=0; i<length; i++)	//repeat the loop while the index value is less than the length of the ArrayList
+			if(highestSales < team.get(i).getSales())	//if the value highestSales is less than ith element of the ArrayList
 				highestSales = team.get(i).getSales();	//replace the highestSales value to ith element of the array
 		this.highestSales = highestSales;	//substitute the class value highestSales for highestSles
 	}
