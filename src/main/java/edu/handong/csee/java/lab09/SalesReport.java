@@ -40,11 +40,10 @@ public class SalesReport {		//declare the class 'SalesReport'
 		team = new ArrayList<SalesAssociate>();	//instantiate the array to team
 		boolean done = false;	//initiate the boolean variable 'done' to false
 	
-		int i=0;	//declare and initiate the index variable 'i' to 0
+		int i=1;	//declare and initiate the index variable 'i' to 1
 		while(!done) {	//'done' was initiated to false, so the condition becomes true and can starts the loop 
-			
 			SalesAssociate salesman = new SalesAssociate();	//initiate the class SalesAssociate to salesman
-			System.out.println("Enter data for associate number "+(i+1));	//print out this message to get the name and sales of salesman
+			System.out.println("Enter data for associate number "+(i++));	//print out this message to get the name and sales of salesman. The index value will increase per loops
 			System.out.print("name? ");	//print out this message to get the name of associate
 			String name = keyboard.nextLine();	//get name from user
 			System.out.println("Sales? ");	//print out this method to get sales from user
