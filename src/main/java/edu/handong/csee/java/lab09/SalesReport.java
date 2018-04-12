@@ -83,7 +83,7 @@ public class SalesReport {		//declare the class 'SalesReport'
 	public void computeAverage() {	//declare the method named 'computedAverage'
 		double sum=0;	//initiate the sum to 0
 		
-		int length = team.size();
+		int length = team.size();	//initiate the length to the size of the ArrayList
 		for(int i=0; i<length; i++)	//repeat the loop while index value is less than length of the array team
 			sum = sum+team.get(i).getSales();	//replace the sum value to sum + ith element of the array
 		averageSales = sum/length;	//substitute the class value 'averageSales' to average value of the array 'team' 
