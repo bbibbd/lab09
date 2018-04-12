@@ -1,4 +1,5 @@
 package edu.handong.csee.java.lab09;	//test3
+import java.util.ArrayList;
 import java.util.Scanner;	//import scanner
 import edu.handong.csee.java.lab09.SalesAssociate;	//import the class 'SalesAssociate'
 
@@ -12,7 +13,7 @@ public class SalesReport {		//declare the class 'SalesReport'
 	
 	private double highestSales;	//declare a double-type value for highest sales
 	private double averageSales;	//declare a double-type value for average sales
-	private SalesAssociate[] team;	//declare an Array named team
+	private ArrayList <SalesAssociate> team;	//declare an Array named team
 	
 	
 	/**
@@ -34,22 +35,28 @@ public class SalesReport {		//declare the class 'SalesReport'
 	 * This method gets all the data from user.
 	 */
 	public void getData() {	//declare the method 'getData'
-		System.out.println("enter the number of salesman: ");	//print out this message to get the number of salesman
-		Scanner keyboard = new Scanner(System.in);	//instantiate the scanner to keyboard
+		/*System.out.println("enter the number of salesman: ");	//print out this message to get the number of salesman
 		int numOfSalesman = keyboard.nextInt();	//get the number of salesman from user
+		*/
 		
-		team = new SalesAssociate[numOfSalesman];	//instantiate the array to team
+		Scanner keyboard = new Scanner(System.in);	//instantiate the scanner to keyboard
 		
-		for(int i=0; i<numOfSalesman; i++) {	//repeat the loop while i is less than number of salesman
-			keyboard.nextLine();	//get rid of the character enter
+		team = new ArrayList<SalesAssociate>();	//instantiate the array to team
+		boolean done = false;
+		
+		int i=0;
+		while(!done) {
+			SalesAssociate salesman = new SalesAssociate();
 			System.out.println("Enter data for associate number "+(i+1));	//print out this message to get the name and sales of salesman
-			System.out.print("name? ");	//print out this message to get the name of associate 
+			System.out.print("name? ");	//print out this message to get the name of associate
 			String name = keyboard.nextLine();	//get name from user
 			System.out.println("Sales? ");	//print out this method to get sales from user
 			double sales = keyboard.nextDouble();	//get sales from user
-			team[i] = new SalesAssociate();	//instantiate
-			team[i].setName(name);	//set name on the array team
-			team[i].setSales(sales);	//set sales on the array team
+			salesman.setName(name);
+			salesman.setSales(sales);
+			
+			team.add(salesman);
+		
 		}	
 		keyboard.close();	//close scanner
 	}
