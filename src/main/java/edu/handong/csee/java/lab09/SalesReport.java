@@ -91,11 +91,11 @@ public class SalesReport {		//declare the class 'SalesReport'
 	 */
 	public void displayResults() {	//declare the class named 'displayResult'
 		System.out.println("Salesman who has the highest sales: ");	//print out this message
-		
-		for(int i=0; i<team.length; i++) {	//repeat the loop while index value is less than length fo the array 'team'
-			if(team[i].getSales()==highestSales) {	//if ith element of the class team is highest sales 
-				System.out.println("Name: "+team[i].getName());	//print out the name of the salesman
-				System.out.println("Sales: "+team[i].getSales());	//print out the sales of the salesman
+	
+		for(int i=0; i<team.size(); i++) {	//repeat the loop while index value is less than length fo the array 'team'
+			if(team.get(i).getSales()==highestSales) {	//if ith element of the class team is highest sales 
+				System.out.println("Name: "+team.get(i).getName());	//print out the name of the salesman
+				System.out.println("Sales: "+team.get(i).getSales());	//print out the sales of the salesman
 			}
 		}
 		System.out.println("Average Sales per associate is "+averageSales);	//print out the average sales of the whole salesman
