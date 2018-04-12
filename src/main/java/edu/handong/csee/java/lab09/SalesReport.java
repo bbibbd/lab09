@@ -46,6 +46,7 @@ public class SalesReport {		//declare the class 'SalesReport'
 		
 		int i=0;
 		while(!done) {
+			
 			SalesAssociate salesman = new SalesAssociate();
 			System.out.println("Enter data for associate number "+(i+1));	//print out this message to get the name and sales of salesman
 			System.out.print("name? ");	//print out this message to get the name of associate
@@ -54,9 +55,11 @@ public class SalesReport {		//declare the class 'SalesReport'
 			double sales = keyboard.nextDouble();	//get sales from user
 			salesman.setName(name);
 			salesman.setSales(sales);
-			
 			team.add(salesman);
-		
+			
+			System.out.println("add more salesman?");
+			if(keyboard.next().equalsIgnoreCase("y"))	done = false;
+			else	done=true;
 		}	
 		keyboard.close();	//close scanner
 	}
